@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 100px);
+        font-size: 3rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        border: 1px solid black;
+      }
+      .floating-emoji {
+        position: absolute;
+      }
+      img{
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function createEmojis(src) {
+        var container = document.body;
+
+        for (var i = 0; i < 10; i++) {
+          var emoji = document.createElement("img");
+          emoji.src = src;
+          emoji.className = "floating-emoji";
+          emoji.style.left = Math.random() * window.innerWidth + "px";
+          emoji.style.top = Math.random() * window.innerHeight + "px";
+          container.appendChild(emoji);
+        }
+
+        setInterval(function () {
+          var emojis = document.getElementsByClassName("floating-emoji");
+          for (var i = 0; i < emojis.length; i++) {
+            emojis[i].style.left = Math.random() * window.innerWidth + "px";
+            emojis[i].style.top = Math.random() * window.innerHeight + "px";
+            emojis[i].animate(
+              [
+                // keyframes
+                {
+                  opacity: 1,
+                  transform: "scale(1.5)",
+                },
+                {
+                  opacity: 0,
+                  transform: "scale(0.5)",
+                },
+              ],
+              {
+                // timing options
+                duration: 2000,
+                iterations: Infinity,
+              }
+            );
+          }
+        }, 2000);
+      }
+      let c = true;
+      setInterval(() => {
+        if (c) {
+          document.body.innerHTML = "PROUT";
+          createEmojis("prout.png");
+          c = false;
+        } else {
+          document.body.innerHTML = "CACA";
+          createEmojis("caca.png");
+          c = true;
+        }
+        document.body.style.backgroundColor = `rgb(${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )})`;
+      }, 1000);
+    </script>
+  </body>
+</html>

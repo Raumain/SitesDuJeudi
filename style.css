@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(22, 23, 26);
+  position: relative;
+}
+
+.background--custom {
+  background: linear-gradient(90deg, #041952, #576abf, #8feaed);
+  background-size: 300% 300%;
+  animation: gradient 4s alternate infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  min-height: calc(100vh - 40px);
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: top;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-img {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.card-body {
+  width: 100%;
+}
+
+.card-body a {
+  color: rgb(0, 12, 87);
+}
+
+.card-body .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card-body .card-title .small-date {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+}
+
+.card-body .card-text p {
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  margin: 0;
+}
+
+.card-body .card-text span {
+  color: rgb(0, 12, 87);
+  font-weight: bold;
+}
+
+#chien .card-img {
+  background-image: url("ptinterro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#cacaprout .card-img {
+  background-image: url("./cacaprout/caca.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#chat .card-img {
+  background-image: url("https://cataas.com/cat");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
