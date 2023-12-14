@@ -25,14 +25,31 @@ body {
   }
 }
 
+h1{
+  color: black;
+  position: relative;
+  font-size: 2rem;
+  text-transform: uppercase;
+  
+}
+
 section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: calc(100vh - 40px);
+}
+
+section > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 20px;
-  min-height: calc(100vh - 40px);
 }
 
 .card {
