@@ -136,4 +136,14 @@ section > div {
   background-repeat: no-repeat;
 }
 
+#commune .card-img{
+  background-image: url("./france.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#commune h2{
+  font-size: 1.2rem;
+}
 
